@@ -7,6 +7,6 @@ data "terraform_remote_state" "foo" {
 
 resource "null_resource" "helloWorld" {
   provisioner "local-exec" {
-    command = "echo hello world-${data.terraform_remote_state.foo.random_pet.names.id}"
+    command = "echo hello world-${data.terraform_remote_state.foo.pet_name}"
   }
 }
